@@ -102,12 +102,20 @@ uploaded_zip = st.file_uploader("Upload a ZIP file containing images", type=["zi
 
 if st.sidebar.button("Prediction", key="dashboard_btn"):
     with st.spinner('Opening Dashboard...'):
-        from predictions import run_prediction_app
+        import subprocess
+        import webbrowser
+        import time
+        import threading
+        with st.spinner('Opening Dashboard...'):
+            def open_browser():
+                time.sleep(2)  # Allow time for Streamlit to start
+                webbrowser.open("http://localhost:8503")  # Open the app in browser
 
-        run_prediction_app()
+        # Start the browser opening in a separate thread
+        threading.Thread(target=open_browser).start()
 
-        time.sleep(1)
-        webbrowser.open(f"http://localhost:8503")
+        # Run the Streamlit app on port 8503
+        subprocess.run(["streamlit", "run", "app.py", "--server.port", "8503"])
 
 
 if uploaded_zip:
