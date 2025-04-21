@@ -310,8 +310,11 @@ df.drop(columns={col_to_delete}, inplace=True)
                 null_values.columns=['Count']
                 null_values.index.names=['Feature']
                 null_values['Feature']=null_values.index
-                fig=px.bar(null_values,x='Feature',y='Count',color='Count',height=350)
-                st.plotly_chart(fig,use_container_width=True)
+                if not null_values.empty:
+                    fig = px.bar(null_values, x='Feature', y='Count', color='Count', height=350)
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.info("No null values to display.")
             
         col1,col2=st.columns(2)
         with col1:
