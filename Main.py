@@ -202,7 +202,7 @@ if st.session_state.df is not None:
 
     st.divider()
     new_line()
-    st.markdown("Exploratory Data Analysis",unsafe_allow_html=True)
+    st.markdown(" ### Exploratory Data Analysis",unsafe_allow_html=True)
     new_line()
     with st.expander("EDA"):
         new_line()
