@@ -735,7 +735,7 @@ df[{trans_feat}] = np.cbrt(df[{trans_feat}])
 
     new_line()
 
-    st.markdown("Data Splitting", unsafe_allow_html=True)
+    st.markdown("### Data Splitting", unsafe_allow_html=True)
     
     
     new_line()
@@ -887,7 +887,7 @@ X_train, X_test, y_train, y_test = train_test_split(df.drop('{target}', axis=1),
 
 
     new_line()
-    st.markdown("building model")
+    st.markdown("### building model")
     new_line()
     problem_type=""
     with st.expander("model building"):
