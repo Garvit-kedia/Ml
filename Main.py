@@ -280,10 +280,10 @@ df.drop(columns={col_to_delete}, inplace=True)
             st.dataframe(df, use_container_width=True)
 
     new_line()
-    
+    st.markdown(" ### Exploratory Missing values",unsafe_allow_html=True)
     with st.expander("Missing Values"):
         new_line()
-        missing=st.checkbox("Further Analysis",value=False,key='missing')
+        missing=False
         new_line()
         if missing:
             col1,col2=st.columns(2,gap='medium')
@@ -408,7 +408,7 @@ df[{fill_feat}] = imputer.fit_transform(df[{fill_feat}])
             st.dataframe(df, use_container_width=True)
     
     new_line()
-    st.markdown("Categorical Data Handling",unsafe_allow_html=True)
+    st.markdown("### Categorical Data Handling",unsafe_allow_html=True)
     new_line()
     with st.expander("Encoding"):
         new_line()
