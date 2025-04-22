@@ -496,7 +496,7 @@ df[{fill_feat}] = imputer.fit_transform(df[{fill_feat}])
         new_line()
 
     new_line()
-    st.markdown("scaling",unsafe_allow_html=True)
+    st.markdown("### Scaling",unsafe_allow_html=True)
     new_line()
     with st.expander("Scaling"):
         new_line()
